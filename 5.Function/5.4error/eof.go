@@ -14,7 +14,8 @@ func main() {
 	//
 	// waitForServer("http://fanyi.baidusadsad.com/")
 	// waitForServer("http://fanyi.baidu.com/")
-	waitForServer("https://chrome.google.com/webstore?utm_source=chrome-ntp-icon")
+	// waitForServer("https://chrome.google.com/webstore?utm_source=chrome-ntp-icon")
+	eof()
 }
 func eof() { //EOF测试
 	in := bufio.NewReader(os.Stdin)
@@ -22,15 +23,31 @@ func eof() { //EOF测试
 		r, _, err := in.ReadRune()
 		if err == io.EOF { //文件读取结束
 			break
+
 		}
 		if err != nil {
 			fmt.Printf("read failed:%v", err)
 		}
 
-		fmt.Printf("%q", r)
-	}
+		fmt.Printf("%q\n", r)
 
+	}
 }
+func yesOrNo() { //确定是否继续输入
+here:
+	fmt.Println("Continue (y/n):")
+	s, _ := bufio.NewReader(os.Stdin).ReadByte()
+	switch s {
+	case 'y':
+		fmt.Println("go on...")
+	case 'n':
+		fmt.Println("exit...")
+		os.Exit(0)
+	default:
+		goto here
+	}
+}
+
 func waitForServer(url string) error {
 	//尝试连接url对应的服务器
 	//所有尝试失败后返回错误
