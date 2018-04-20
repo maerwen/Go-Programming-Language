@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-const IssueURL = "https://api.github.com/v3/search/#search-issues"
+const IssueURL = "https://api.github.com/v3/search/#search-issues" //连接不上
 
 type IssueSearchResult struct {
 	TotalCount int `json:"total_count"`
