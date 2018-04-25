@@ -16,7 +16,7 @@ func client() {
 		log.Fatal(err)
 	}
 	defer con.Close()
-	go mustCopy(os.Stdout, con)
+	go mustCopy(os.Stdout, con) //先疏通con,才能发送
 	mustCopy(con, os.Stdin)
 }
 func mustCopy(dest io.Writer, src io.Reader) { //消息传输
