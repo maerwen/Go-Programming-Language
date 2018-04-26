@@ -1,7 +1,7 @@
 package main
 
 func main() {
-
+	test(1, 2)
 }
 
 type Writer interface { //单方法接口
