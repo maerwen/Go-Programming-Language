@@ -38,12 +38,13 @@ func TestIsPalindrome(t *testing.T) {
 		want  bool
 	}{
 		{"", true},
+		{"a", true},
 		{"deded", true},
 		{"katak", true},
 		{"query", false},
 		{"été", true},
-		{"ok,wow.ko!", false},
-		{"lalala", true},
+		{"ok,wow.ko!", true},
+		{"lalala", false},
 	}
 	for _, ele := range tests {
 		if got := IsPalindrome(ele.input); got != ele.want {
