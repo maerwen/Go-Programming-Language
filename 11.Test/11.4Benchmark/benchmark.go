@@ -1,6 +1,8 @@
 package benchmark
 
-import "unicode"
+import (
+	"unicode"
+)
 
 func IsPalindrome1(s string) bool {
 	for i := 0; i < len(s); i++ {

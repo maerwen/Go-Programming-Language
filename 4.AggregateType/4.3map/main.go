@@ -50,7 +50,7 @@ func charcount() { //计算unicode字符的个数
 		}
 	}
 	if invalid > 0 {
-		fmt.Printf("\n%d invaliud UTF-8 characters\n,invalid")
+		fmt.Printf("\n%d invaliud UTF-8 characters\n", invalid)
 	}
 
 }
